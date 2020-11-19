@@ -130,3 +130,6 @@ dmypy.json
 
 # Discord Token
 src/config.py
+
+# .idea Directory Present in some IDEs
+.idea/
