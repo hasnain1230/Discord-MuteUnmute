@@ -1,5 +1,6 @@
 from discord.ext import commands
 from discord.ext.commands import has_permissions, MissingPermissions
+
 from src import config
 
 bot = commands.Bot(command_prefix='!')
@@ -7,7 +8,8 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.event
 async def on_ready():
-    print(f'{bot.user} has logged in successfully!')
+    print('We have logged in as {}'.format(bot.user))
+    # Would like to learn how to send a message to all channels.
 
 
 @bot.event
@@ -42,5 +44,5 @@ async def mute_error(ctx, error):
         return
     raise error
 
-
-bot.run(config.DISCORD_SECRET_TOKEN)
+TOKEN = config.DISCORD_SECRET_TOKEN
+bot.run(TOKEN)
